@@ -4,7 +4,7 @@
 
 Rectangle.prototype.paint = function(ctx) {
 //TODO Manager color
-    ctx.rect(this.orgX, this.orgY, (this.orgX+this.larf, this.orgY+this.haut);
+    ctx.rect(this.orgX, this.orgY, (this.orgX+this.larg, this.orgY+this.haut);
     ctx.stroke();
 };
 
@@ -23,7 +23,7 @@ Drawing.prototype.paint = function(ctx) {
     console.log(this.general);
     ctx.fillStyle = '#F0F0F0'/*'#F0F0F0'*/; // set canvas' background color
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    this.forms.forEach(function(eltDuTableau) {
+    this.general.forEach(function(eltDuTableau) {
         // now fill the canvas
         eltDuTableau.paint(ctx);
     });

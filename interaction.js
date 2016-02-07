@@ -2,7 +2,7 @@
 // La cr√©ation d'un Dnd requi√®re un canvas et un interacteur.
 // L'interacteur viendra dans un second temps donc ne vous en souciez pas au d√©part.
 
-function DnD(canvas, interactor) {
+function DnD(canvas, Pencil) {
 	this.xI = 0;
 	this.yI= 0;
 	this.xF= 0;
@@ -11,23 +11,24 @@ function DnD(canvas, interactor) {
 
 	// Developper les 3 fonctions gÈrant les ÈvÈnements
 	
-    this.maFctGÈrantLaPression = function(evt) {
+    this.maFctGerantLaPression= function(evt) {
         if(this.btPress==false) {
             this.btPress=true;
             this.xI = getMousePosition(canvas, evt).x;
             this.yI = getMousePosition(canvas, evt).y;
-            //pencil.onInteractionStart(this);
+            Pencil.onInteractionStart(this);
+            
         }
-/*      console.log(this.xI);
+      console.log(this.xI);
       	console.log(this.yI);
-  */  }.bind(this) ;
+   }.bind(this) ;
 
 
-	this.maFctGÈrantLeDÈplacement = function(evt){
+	this.maFctGerantLeDeplacement = function(evt){
 	 if(this.btPress==true) {
 		this.xF=getMousePosition(canvas,evt).x;
         this.yF=getMousePosition(canvas,evt).y;		
-        //pencil.onInteractionUpdate(this);
+        Pencil.onInteractionUpdate(this);
         }
 		console.log(this.xF);
       	console.log(this.yF);
@@ -36,16 +37,16 @@ function DnD(canvas, interactor) {
 	
 		
 	
-	  this.maFctGÈrantLeRel‚chement=function(evt) {
+	  this.maFctGerantLeRelachement=function(evt) {
         if(this.btPress==true){
-            this.this.btPress=false;
-            pencil.onInteractionEnd(this);
+            this.btPress=false;
+          Pencil.onInteractionEnd(this);
             this.xI = 0;
             this.yI =0;
             this.xF = 0;
             this.yF =0;
-/*            	console.log(this.xF);
-            	console.log(this.yF);*/
+          	console.log(this.xF);
+            	console.log(this.yF);
       }
     }.bind(this) ;
 
