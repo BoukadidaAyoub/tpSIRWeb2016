@@ -12,7 +12,30 @@ function Pencil(ctx, drawing, canvas) {
 	new DnD(canvas, this);
 
 	// Implémentez ici les 3 fonctions onInteractionStart, onInteractionUpdate et onInteractionEnd
+	this.onInteractionStart=function(DnD){
+		var butRect = this.getElementById(butRect);
+		var butLine =this.getElementById(butLine);
+		var spinnerWidth= this.getElementById(spinnerWidth);
+		var colour= this.getElementById(colour);
 
+		this.currLineWidth= spinnerWidth.value;
+		this.currColour= colour.value;
+
+		console.log('epaisseur' +this.currLineWidth+' '+'couleur' +this.currColour);
+
+
+
+
+
+
+	}.bind(this);
+	this.onInteractionUpdate=function(DnD){
+
+	}.bind(this);
+
+	this.onInteractionEnd=function(DnD){
+
+	}.bind(this);
 
 };
 

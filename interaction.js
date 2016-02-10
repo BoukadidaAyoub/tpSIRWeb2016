@@ -17,7 +17,7 @@ function DnD(canvas, Pencil) {
             this.xI = getMousePosition(canvas, evt).x;
             this.yI = getMousePosition(canvas, evt).y;
             Pencil.onInteractionStart(this);
-            
+
         }
       console.log(this.xI);
       	console.log(this.yI);
@@ -27,8 +27,8 @@ function DnD(canvas, Pencil) {
 	this.maFctGerantLeDeplacement = function(evt){
 	 if(this.btPress==true) {
 		this.xF=getMousePosition(canvas,evt).x;
-        this.yF=getMousePosition(canvas,evt).y;		
-        Pencil.onInteractionUpdate(this);
+        this.yF=getMousePosition(canvas,evt).y;
+         Pencil.onInteractionUpdate(this);
         }
 		console.log(this.xF);
       	console.log(this.yF);
@@ -40,13 +40,13 @@ function DnD(canvas, Pencil) {
 	  this.maFctGerantLeRelachement=function(evt) {
         if(this.btPress==true){
             this.btPress=false;
-          Pencil.onInteractionEnd(this);
+            Pencil.onInteractionEnd(this);
             this.xI = 0;
             this.yI =0;
             this.xF = 0;
             this.yF =0;
           	console.log(this.xF);
-            	console.log(this.yF);
+            console.log(this.yF);
       }
     }.bind(this) ;
 

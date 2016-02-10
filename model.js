@@ -7,34 +7,35 @@
 //Class Drawing
 function Drawing() {
     //Déclarer un array
-    this.general = new Array();
+    this.formes = new Array();
 };
 
 
-//Classe general
-function general(epaisseur, couleur) {
-    this.couleur=couleur;
+//Classe formes
+function formes(epaisseur, couleur) {
     this.epaisseur=epaisseur;
+    this.couleur=couleur;
+
 };
 
 
 //Classe Rectangle
 function Rectangle(orgX, orgY, larg, haut, epaisseur, couleur) {
-    general.call(this, epaisseur, couleur);
+    formes.call(this, epaisseur, couleur);
     this.orgX=orgX;
     this.orgY=orgY;
     this.larg=larg;
     this.haut=haut;
 };
-Rectangle.prototype = new general();
+Rectangle.prototype = new formes();
 
 
 //Classe Line
 function Line(xA, yA, xB, yB, epaisseur, couleur) {
-    general.call(this, couleur, epaisseur);
+    formes.call(this, epaisseur, couleur);
     this.xA=xA;
     this.yA=yA;
     this.xB=xB;
     this.yB=yB;
 };
-Rectangle.prototype = new general();
+Line.prototype = new formes();
